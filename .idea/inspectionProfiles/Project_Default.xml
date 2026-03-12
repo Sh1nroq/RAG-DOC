@@ -1,0 +1,55 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="contextlib" />
+          <option value="pathlib" />
+          <option value="torchaudio" />
+          <option value="pandas" />
+          <option value="numpy" />
+          <option value="transformers" />
+          <option value="orjson" />
+          <option value="requests" />
+          <option value="huggingface_hub" />
+          <option value="tqdm" />
+          <option value="pyarrow" />
+          <option value="fastparquet" />
+          <option value="fastapi" />
+          <option value="uvicorn" />
+          <option value="pydantic" />
+          <option value="python-dotenv" />
+          <option value="sqlalchemy" />
+          <option value="pydantic_settings" />
+          <option value="asyncpg" />
+          <option value="qdrant_client" />
+          <option value="typing" />
+          <option value="torch" />
+          <option value="torchvision" />
+          <option value="sentence-transformers" />
+          <option value="ruff" />
+          <option value="mypy" />
+          <option value="pytest" />
+          <option value="pytest-asyncio" />
+          <option value="httpx" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="_random.random.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

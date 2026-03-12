@@ -1,0 +1,32 @@
+[build-system]
+requires = ["uv_build >= 0.10.8, <0.11.0"]
+build-backend = "uv_build"
+
+[project]
+name = "RAG"
+version = "12.10.2026"
+authors = [
+  {name = "Roman Drovskikh", email = "dorovskih2005@gmail.com"},
+]
+requires-python = ">= 3.11"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = [
+    "black>=26.3.1",
+    "mypy>=1.19.1",
+    "ruff>=0.15.5",
+]
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I"]
+ignore = []
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+
+[tool.mypy]
+python_version = "3.9"
+strict = true
