@@ -4,6 +4,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
+
 class Settings(BaseSettings):
     DATA_DIR: Path = PROJECT_ROOT / "data"
     RAW_DATA_DIR: Path = PROJECT_ROOT / "data" / "raw"
@@ -12,9 +13,9 @@ class Settings(BaseSettings):
     OPENAI_API_KEY: str | None = None
 
     model_config = SettingsConfigDict(
-        env_file=str(PROJECT_ROOT / ".env"),
-        extra="ignore"
+        env_file=str(PROJECT_ROOT / ".env"), extra="ignore"
     )
+
 
 settings = Settings()
 
