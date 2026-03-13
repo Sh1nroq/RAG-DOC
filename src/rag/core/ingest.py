@@ -1,4 +1,12 @@
+import pprint
+
 from langchain_community.document_loaders import PyPDFLoader
 
-file_path = "./example_data/layout-parser-paper.pdf"
-loader = PyPDFLoader(file_path)
+from rag.config import settings
+
+
+filepath = settings.RAW_DATA_DIR / "i20-23.pdf"
+
+loader = PyPDFLoader(filepath)
+docs = loader.load()
+print(docs[0].page_content[:5780])
