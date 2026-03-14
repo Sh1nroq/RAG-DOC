@@ -1,12 +1,26 @@
-import pprint
+import torch
+from docling.datamodel.accelerator_options import AcceleratorOptions, AcceleratorDevice
 
-from langchain_community.document_loaders import PyPDFLoader
-
+from docling.document_converter import DocumentConverter, PdfFormatOption
+from docling.datamodel.base_models import InputFormat
+from docling.datamodel.pipeline_options import PdfPipelineOptions
 from rag.config import settings
 
 
-filepath = settings.RAW_DATA_DIR / "i20-23.pdf"
+pipeline_options = PdfPipelineOptions()
 
-loader = PyPDFLoader(filepath)
-docs = loader.load()
-print(docs[0].page_content[:5780])
+pipeline_options.accelerator_options = AcceleratorOptions(device=AcceleratorDevice.CUDA)
+
+converter = DocumentConverter(
+    format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=pipeline_options)}
+)
+
+filepath = settings.RAW_DATA_DIR / "test.pdf"
+filepath_w = settings.RAW_DATA_DIR / "t.md"
+
+result = converter.convert(filepath)
+
+markdown_text = result.document.export_to_markdown()
+
+with open(filepath_w, "w+", encoding="UTF-8") as f:
+    f.write(markdown_text)
