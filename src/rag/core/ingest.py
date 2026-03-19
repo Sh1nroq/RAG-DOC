@@ -44,7 +44,7 @@ def chunk_to_id(chunk: str) -> str:
     return hashlib.md5(chunk.encode()).hexdigest()
 
 
-def get_embedding(client: OpenAI, docs_text: str) -> list[float]:
-    response = client.embeddings.create(input=docs_text, model="text-embedding-3-small")
+def get_embeddings(client: OpenAI, chunks: list[str]) -> list[list[float]]:
+    response = client.embeddings.create(input=chunks, model="text-embedding-3-small")
 
-    return response.data[0].embedding
+    return [item.embedding for item in response.data]

@@ -50,7 +50,7 @@ uv pip install -e .
    ```bash
    cp .env.example .env
    ```
-2. Откройте файл `.env` и вставьте ваш ключ от OPENROUTER:
+2. Откройте файл `.env` и вставьте ваш ключ от OpenRouter:
    ```dotenv
    OPENAI_API_KEY=sk-your_api_key_here
    ```
