@@ -29,6 +29,8 @@ dependencies = [
     "torch",
     "torchvision",
     "torchaudio",
+    "qdrant-client>=1.17.1",
+    "langchain-text-splitters>=1.1.1",
 ]
 
 [tool.uv]
