@@ -48,3 +48,9 @@ def get_embeddings(client: OpenAI, chunks: list[str]) -> list[list[float]]:
     response = client.embeddings.create(input=chunks, model="text-embedding-3-small")
 
     return [item.embedding for item in response.data]
+
+
+def get_embedding(client: OpenAI, text: str) -> list[float]:
+    response = client.embeddings.create(input=text, model="text-embedding-3-small")
+
+    return response.data[0].embedding

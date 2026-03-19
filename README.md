@@ -61,8 +61,8 @@ uv pip install -e .
 
 ```bash
 # Форматирование кода
-ruff formant ./src/ --fix
-ruff check --fix src/
+ruff formant ./src/
+ruff check ./src/ --fix
 
 # Проверка типов
 mypy ./src/
