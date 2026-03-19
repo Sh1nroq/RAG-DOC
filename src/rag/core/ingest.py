@@ -1,10 +1,9 @@
 from pathlib import Path
 
-from docling.datamodel.accelerator_options import AcceleratorOptions, AcceleratorDevice
-
-from docling.document_converter import DocumentConverter, PdfFormatOption
+from docling.datamodel.accelerator_options import AcceleratorDevice, AcceleratorOptions
 from docling.datamodel.base_models import InputFormat
 from docling.datamodel.pipeline_options import PdfPipelineOptions
+from docling.document_converter import DocumentConverter, PdfFormatOption
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 

@@ -1,8 +1,6 @@
 from numpy import ndarray
 from qdrant_client import QdrantClient
-from qdrant_client.grpc import VectorParams, Distance
-
-from rag.config import settings
+from qdrant_client.grpc import Distance, VectorParams
 
 
 def upsert_collection(
