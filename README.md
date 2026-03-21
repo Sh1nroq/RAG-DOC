@@ -36,6 +36,7 @@ cd RAG-DOC
 
 ```bash
 # Инициализация виртуального окружения и установка пакетов
+uv venv
 uv sync
 ```
 *Или, если вы устанавливаете глобально/в существующее окружение:*
@@ -50,9 +51,11 @@ uv pip install -e .
    ```bash
    cp .env.example .env
    ```
-2. Откройте файл `.env` и вставьте ваш ключ от OpenRouter:
+2. Откройте файл `.env` и вставьте ваш ключ от OpenRouter и название коллекции для БД:
    ```dotenv
    OPENAI_API_KEY=sk-your_api_key_here
+   
+   COLLECTION_NAME=your_collection
    ```
 
 ## 🛠 Разработка
@@ -61,7 +64,7 @@ uv pip install -e .
 
 ```bash
 # Форматирование кода
-ruff formant ./src/
+ruff format ./src/
 ruff check ./src/ --fix
 
 # Проверка типов

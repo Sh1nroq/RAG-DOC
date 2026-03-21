@@ -30,6 +30,7 @@ dependencies = [
     "torchaudio",
     "qdrant-client>=1.17.1",
     "langchain-text-splitters>=1.1.1",
+    "fastapi[standard]>=0.135.1",
 ]
 
 [tool.uv]
@@ -64,3 +65,6 @@ mypy_path = "src"
 explicit_package_bases = true
 namespace_packages = true
 ignore_missing_imports = true
+
+[tool.fastapi]
+entrypoint = "rag.backend.main:app"

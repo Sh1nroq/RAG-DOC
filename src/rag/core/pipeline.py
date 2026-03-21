@@ -19,9 +19,10 @@ def run_update_db(
     upsert_collection(qdrant_client, settings.COLLECTION_NAME, embeddings, chunks)
 
 
-def run_rag_chain(qdrant_client: QdrantClient, openai_client: OpenAI) -> str:
+def run_rag_chain(
+    user_query: str, qdrant_client: QdrantClient, openai_client: OpenAI
+) -> str:
     """Sematic search and answer from LLM"""
-    user_query = input()  # test
     text_emb = get_embedding(openai_client, user_query)
     results = semantic_search(qdrant_client, text_emb)
     context = [str(text.payload["text"]) for text in results if text.payload]
