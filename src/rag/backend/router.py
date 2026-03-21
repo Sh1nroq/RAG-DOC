@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException
 
 from rag.backend.repository import rag_repo
-from rag.backend.schemas import ModelResponse, UserRequest, StatusResponse
+from rag.backend.schemas import ModelResponse, StatusResponse, UserRequest
 
 router = APIRouter(
     prefix="/app",
