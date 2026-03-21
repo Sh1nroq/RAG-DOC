@@ -3,13 +3,13 @@ import asyncio
 from openai import OpenAI
 from qdrant_client import QdrantClient
 
-from rag.backend.schemas import ModelResponse, UserRequest, StatusResponse
+from rag.backend.schemas import ModelResponse, StatusResponse, UserRequest
 from rag.config import settings
-from rag.core.pipeline import run_update_db, run_rag_chain
+from rag.core.pipeline import run_rag_chain, run_update_db
 
 
 class RagRepository:
-    def __init__(self):
+    def __init__(self) -> None:
         self.client_openai = OpenAI(
             base_url="https://openrouter.ai/api/v1",
             api_key=settings.OPENAI_API_KEY,

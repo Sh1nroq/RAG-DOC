@@ -27,18 +27,3 @@ def run_rag_chain(
     results = semantic_search(qdrant_client, text_emb)
     context = [str(text.payload["text"]) for text in results if text.payload]
     return get_answer_llm(openai_client, context, user_query)
-
-
-if __name__ == "__main__":
-    file_path = settings.RAW_DATA_DIR / "test.pdf"
-
-    client_openai = OpenAI(
-        base_url="https://openrouter.ai/api/v1",
-        api_key=settings.OPENAI_API_KEY,
-        max_retries=5,
-    )
-
-    client_qdrant = QdrantClient(url="http://localhost:6333")
-
-    # run_update_db(file_path, client_qdrant, client_openai)
-    print(run_rag_chain(client_qdrant, client_openai))
